@@ -17,7 +17,7 @@ class EmployeeServiceImplTest {
     private final EmployeeService employeeService = new EmployeeServiceImpl();
 
     @BeforeEach
-    void employeesInit() {
+    void setUp() {
         employeeService.add("Ivan", "Fedorov", 100_000.0f, 1);
         employeeService.add("Petr", "Ivanov", 120_000.0f, 1);
         employeeService.add("Maria", "Petrova", 110_000.0f, 3);
