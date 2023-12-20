@@ -2,7 +2,7 @@ package ru.skypro.course2.aliyev.EmployeeBookWithTests.service;
 
 import ru.skypro.course2.aliyev.EmployeeBookWithTests.model.Employee;
 
-import java.util.Collection;
+import java.util.Map;
 
 public interface EmployeeService {
     Employee add(String firstName, String lastName, float salary, int departmentId);
@@ -11,5 +11,5 @@ public interface EmployeeService {
 
     Employee find(String firstName, String lastName);
 
-    Collection<Employee> getEmployees();
+    Map<String, Employee> getEmployees();
 }

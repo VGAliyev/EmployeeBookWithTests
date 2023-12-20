@@ -21,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<Employee> getAllEmployeeByDepartment(int departmentId) {
-        return employeeService.getEmployees()
+        return employeeService.getEmployees().values()
                 .stream()
                 .filter(employee -> employee.getDepartment() == departmentId)
                 .collect(Collectors.toList());
@@ -29,7 +29,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public float getSumSalary(int departmentId) {
-        return (float) employeeService.getEmployees()
+        return (float) employeeService.getEmployees().values()
                 .stream()
                 .filter(employee -> employee.getDepartment() == departmentId)
                 .mapToDouble(Employee::getSalary)
@@ -38,7 +38,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public float getMaxSalary(int departmentId) {
-        return employeeService.getEmployees()
+        return employeeService.getEmployees().values()
                 .stream()
                 .filter(employee -> employee.getDepartment() == departmentId)
                 .max(Comparator.comparingDouble(Employee::getSalary))
@@ -48,7 +48,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public float getMinSalary(int departmentId) {
-        return employeeService.getEmployees()
+        return employeeService.getEmployees().values()
                 .stream()
                 .filter(employee -> employee.getDepartment() == departmentId)
                 .min(Comparator.comparingDouble(Employee::getSalary))
@@ -58,7 +58,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Map<Integer, List<Employee>> getAllEmployee() {
-        return employeeService.getEmployees()
+        return employeeService.getEmployees().values()
                 .stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment));
     }

@@ -7,6 +7,7 @@ import ru.skypro.course2.aliyev.EmployeeBookWithTests.model.Employee;
 import ru.skypro.course2.aliyev.EmployeeBookWithTests.service.EmployeeService;
 
 import java.util.Collection;
+import java.util.Map;
 
 @RestController
 @RequestMapping("employee")
@@ -34,7 +35,7 @@ public class EmployeeController {
     }
 
     @RequestMapping()
-    public Collection<Employee> getEmployees() {
+    public Map<String, Employee> getEmployees() {
         return employeeService.getEmployees();
     }
 }

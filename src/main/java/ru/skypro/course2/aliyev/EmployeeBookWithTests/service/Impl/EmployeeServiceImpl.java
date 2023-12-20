@@ -8,7 +8,6 @@ import ru.skypro.course2.aliyev.EmployeeBookWithTests.exception.EmployeeNotValid
 import ru.skypro.course2.aliyev.EmployeeBookWithTests.model.Employee;
 import ru.skypro.course2.aliyev.EmployeeBookWithTests.service.EmployeeService;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,8 +51,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Collection<Employee> getEmployees() {
-        return Collections.unmodifiableCollection(employees.values()); // Unmodifiable client copy
+    public Map<String, Employee> getEmployees() {
+        return Collections.unmodifiableMap(employees); // Unmodifiable client copy
     }
 
     private static String getFullName(String firstName, String lastName) {
