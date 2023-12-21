@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("department")
+@RequestMapping("/department")
 public class DepartmentController {
     private final DepartmentService departmentService;
 
@@ -18,27 +18,27 @@ public class DepartmentController {
         this.departmentService = departmentService;
     }
 
-    @RequestMapping("{id}/employees")
+    @RequestMapping("/{id}/employees")
     public List<Employee> getAllEmployeeByDepartment(@PathVariable int id) {
         return departmentService.getAllEmployeeByDepartment(id);
     }
 
-    @RequestMapping("{id}/salary/sum")
+    @RequestMapping("/{id}/salary/sum")
     public float getSumSalary(@PathVariable int id) {
         return departmentService.getSumSalary(id);
     }
 
-    @RequestMapping("{id}/salary/max")
+    @RequestMapping("/{id}/salary/max")
     public float getMaxSalary(@PathVariable int id) {
         return departmentService.getMaxSalary(id);
     }
 
-    @RequestMapping("{id}/salary/min")
+    @RequestMapping("/{id}/salary/min")
     public float getMinSalary(@PathVariable int id) {
         return departmentService.getMinSalary(id);
     }
 
-    @RequestMapping("employees")
+    @RequestMapping("/employees")
     public Map<Integer, List<Employee>> getAllEmployee() {
         return departmentService.getAllEmployee();
     }

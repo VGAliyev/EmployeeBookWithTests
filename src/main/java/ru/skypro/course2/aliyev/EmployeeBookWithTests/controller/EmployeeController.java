@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.Map;
 
 @RestController
-@RequestMapping("employee")
+@RequestMapping("/employee")
 public class EmployeeController {
     private final EmployeeService employeeService;
 
@@ -18,18 +18,18 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @RequestMapping("add")
+    @RequestMapping("/add")
     public Employee add(@RequestParam String firstName, @RequestParam String lastName,
                         @RequestParam float salary, @RequestParam int departmentId) {
         return employeeService.add(firstName, lastName, salary, departmentId);
     }
 
-    @RequestMapping("remove")
+    @RequestMapping("/remove")
     public Employee remove(@RequestParam String firstName, @RequestParam String lastName) {
         return employeeService.remove(firstName, lastName);
     }
 
-    @RequestMapping("find")
+    @RequestMapping("/find")
     public Employee find(@RequestParam String firstName, @RequestParam String lastName) {
         return employeeService.find(firstName, lastName);
     }
